@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Pedagógicas MYK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    
+    <div class="container" id="public-view">
+        <header>
+            <div class="logo-container" id="logo-trigger">
+                <h1>MYK</h1>
+                <p>Soluciones Pedagógicas Educativas</p>
+                <small>Be wise, my son</small>
+            </div>
+            <h2>Agendamiento de Citas</h2>
+        </header>
+
+        <main>
+            <section class="services-section">
+                <h3>Nuestros Servicios</h3>
+                <ul id="service-list">
+                    <li>Cargando base de datos...</li>
+                </ul>
+                <div class="bank-info">
+                    <h4>Información Bancaria</h4>
+                    <p id="bank-details">Cargando...</p>
+                </div>
+            </section>
+
+            <section class="booking-section">
+                <h3>Reserva tu Cita</h3>
+                <form id="booking-form">
+                    <label for="client-name">Nombre del Paciente:</label>
+                    <input type="text" id="client-name" required>
+
+                    <label for="service-select">Servicio:</label>
+                    <select id="service-select" required>
+                        <option value="" disabled selected>Cargando servicios...</option>
+                    </select>
+
+                    <label for="booking-date">Fecha:</label>
+                    <input type="date" id="booking-date" required>
+
+                    <label for="booking-time">Hora:</label>
+                    <select id="booking-time" required>
+                        <option value="08:00">08:00 AM</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                    </select>
+
+                    <button type="submit" class="btn-whatsapp" id="btn-submit" disabled>Agendar por WhatsApp</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Panel de Administración -->
+    <div class="container hidden" id="admin-view">
+        <header class="admin-header">
+            <h2>Panel de Administración (Firebase)</h2>
+            <button id="btn-logout" class="btn-danger">Cerrar Sesión</button>
+        </header>
+        
+        <main>
+            <section class="admin-section">
+                <h3>Configuración de Servicios y Precios (USD)</h3>
+                <div id="admin-services-list"></div>
+                <button id="btn-save-services" class="btn-primary">Guardar Precios</button>
+            </section>
+
+            <section class="admin-section">
+                <h3>Configuración General</h3>
+                <label for="admin-bank">Datos Bancarios:</label>
+                <textarea id="admin-bank" rows="3"></textarea>
+                
+                <label for="admin-limit">Límite de Citas por Día:</label>
+                <input type="number" id="admin-limit" min="1">
+                
+                <button id="btn-save-config" class="btn-primary">Guardar Configuración</button>
+            </section>
+            
+            <section class="admin-section">
+                <h3>Citas Registradas (Nube)</h3>
+                <ul id="admin-appointments"></ul>
+                <button id="btn-clear-appointments" class="btn-danger">Limpiar Todas las Citas</button>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+/* Paleta de Colores basada en el Flyer */
+:root {
+    --primary-blue: #004a8c;
+    --light-blue: #32a1d0;
+    --yellow: #ffd500;
+    --red: #e31837;
+    --white: #ffffff;
+    --text-dark: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-blue);
+    color: var(--text-dark);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--yellow);
+}
+
+.logo-container {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.logo-container h1 {
+    font-size: 2.5rem;
+    color: var(--yellow);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+main {
+    padding: 20px;
+}
+
+h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 5px;
+}
+
+.services-section, .booking-section, .admin-section {
+    margin-bottom: 30px;
+}
+
+#service-list {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+#service-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.bank-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid var(--yellow);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:disabled {
+    background-color: #cccccc !important;
+    cursor: not-allowed;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+.btn-whatsapp:hover:not(:disabled) {
+    background-color: #128C7E;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--light-blue);
+}
+
+.btn-danger {
+    background-color: var(--red);
+    color: white;
+}
+.btn-danger:hover:not(:disabled) {
+    background-color: #b30f26;
+}
+
+.admin-header {
+    background-color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h2 {
+    font-size: 1.2rem;
+}
+
+.service-edit-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.service-edit-row input {
+    width: 80px;
+    margin-top: 0;
+}
